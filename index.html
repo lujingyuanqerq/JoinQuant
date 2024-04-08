@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>calculate API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>calculate</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import jqdatasdk as jqd
+import connectJoinQuant as conn
+
+&#34;&#34;&#34;
+计算KDJ指标
+
+data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+period: 计算RSV的周期，默认为9。
+k_smooth: K值的平滑参数，默认为3。
+d_smooth: D值的平滑参数，默认为3。
+return 包含k,d,j指标的Dataframe
+&#34;&#34;&#34;
+
+
+def calculate_kdj(data, period=9, k_smooth=3, d_smooth=3):
+    # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
+    # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
+    # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
+    # print(f&#34;high:{data[&#39;high&#39;]} ; low:{data[&#39;low&#39;]} ; close:{data[&#39;close&#39;]}&#34;)
+
+    # 计算RSV（未成熟随机值）
+    low_min = data[&#39;low&#39;].rolling(window=period).min()
+    high_max = data[&#39;high&#39;].rolling(window=period).max()
+    # data[&#39;RSV&#39;] = (data[&#39;close&#39;] - low_min) / (high_max - low_min) * 100
+
+    # 初始化K、D列
+    prev_k = 50  # 初始值可以根据实际情况调整
+    prev_d = 50  # 初始值可以根据实际情况调整
+
+    # 计算K、D指标
+    for i in range(1, len(data)):
+        current_rsv = (data.loc[data.index[i], &#39;close&#39;] - low_min.loc[data.index[i]]) / (
+                high_max.loc[data.index[i]] - low_min.loc[data.index[i]]) * 100 if not np.isnan(
+            low_min.loc[data.index[i]]) else np.nan
+        if not np.isnan(current_rsv):  # 如果RSV不是NaN，进行K和D的计算
+            current_k = (prev_k * (k_smooth - 1) + current_rsv) / k_smooth
+            current_d = (prev_d * (d_smooth - 1) + current_k) / d_smooth
+        else:
+            current_k = prev_k
+            current_d = prev_d
+
+            # 更新DataFrame和前一日的值
+        data.loc[data.index[i], &#39;K&#39;] = current_k
+        data.loc[data.index[i], &#39;D&#39;] = current_d
+        data.loc[data.index[i], &#39;J&#39;] = 3 * current_k - 2 * current_d
+
+        prev_k = current_k
+        prev_d = current_d
+
+    return data
+
+
+&#34;&#34;&#34;
+计算KDJ指标小于0。
+
+参数:
+data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+period: 计算RSV的周期，默认为9。
+k_smooth: K值的平滑参数，默认为3。
+d_smooth: D值的平滑参数，默认为3。
+return kdj的j值&lt;0的dataframe
+&#34;&#34;&#34;
+
+
+def calculate_kdj_below_zero(data, period=9, k_smooth=3, d_smooth=3):
+    # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
+    # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
+    # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
+    # print(f&#34;high:{data[&#39;high&#39;]} ; low:{data[&#39;low&#39;]} ; close:{data[&#39;close&#39;]}&#34;)
+
+    # 计算RSV（未成熟随机值）
+    low_min = data[&#39;low&#39;].rolling(window=period).min()
+    high_max = data[&#39;high&#39;].rolling(window=period).max()
+    # data[&#39;RSV&#39;] = (data[&#39;close&#39;] - low_min) / (high_max - low_min) * 100
+
+    # 初始化K、D列
+    prev_k = 50  # 初始值可以根据实际情况调整
+    prev_d = 50  # 初始值可以根据实际情况调整
+
+    # 计算K、D指标
+    for i in range(1, len(data)):
+        current_rsv = (data.loc[data.index[i], &#39;close&#39;] - low_min.loc[data.index[i]]) / (
+                high_max.loc[data.index[i]] - low_min.loc[data.index[i]]) * 100 if not np.isnan(
+            low_min.loc[data.index[i]]) else np.nan
+        if not np.isnan(current_rsv):  # 如果RSV不是NaN，进行K和D的计算
+            current_k = (prev_k * (k_smooth - 1) + current_rsv) / k_smooth
+            current_d = (prev_d * (d_smooth - 1) + current_k) / d_smooth
+        else:
+            current_k = prev_k
+            current_d = prev_d
+
+            # 更新DataFrame和前一日的值
+        data.loc[data.index[i], &#39;K&#39;] = current_k
+        data.loc[data.index[i], &#39;D&#39;] = current_d
+        data.loc[data.index[i], &#39;J&#39;] = 3 * current_k - 2 * current_d
+
+        prev_k = current_k
+        prev_d = current_d
+
+    # 计算J
+    kdj_below_zero = data[data[&#39;J&#39;] &lt; 0]
+
+    return kdj_below_zero
+
+
+&#34;&#34;&#34;
+计算macd指标
+data: 包含&#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+short_window：快速EMA
+long_window：慢速EMA
+signal_window：信号线市场
+return 包含MACD线、信号线、MACD柱状图的Dataframe
+&#34;&#34;&#34;
+
+
+def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
+    &#34;&#34;&#34;
+    计算MACD指标，包括MACD线、信号线和柱状图。
+    &#34;&#34;&#34;
+    # 计算短期和长期的指数移动平均
+    short_ema = data[&#39;close&#39;].ewm(span=short_window, adjust=False).mean()
+    long_ema = data[&#39;close&#39;].ewm(span=long_window, adjust=False).mean()
+
+    # 计算MACD线和信号线
+    data[&#39;MACD&#39;] = short_ema - long_ema
+    data[&#39;Signal_Line&#39;] = data[&#39;MACD&#39;].ewm(span=signal_window, adjust=False).mean()
+
+    # 计算MACD柱状图
+    data[&#39;Histogram&#39;] = data[&#39;MACD&#39;] - data[&#39;Signal_Line&#39;]
+
+    return data
+
+
+&#34;&#34;&#34;
+识别MACD蓝柱区域
+调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+data：包含MACD线、信号线、柱状图）列的DataFrame，代表股票的历史价格数据。
+return 包含每个蓝柱区间起始和结束索引的列表
+&#34;&#34;&#34;
+
+
+def identify_macd_blue_zones(data):
+    &#34;&#34;&#34;
+    识别MACD蓝柱区间。
+    &#34;&#34;&#34;
+    # 首先确保数据中已有MACD相关列，如果没有则先计算
+    if &#39;MACD&#39; not in data.columns or &#39;Signal_Line&#39; not in data.columns or &#39;Histogram&#39; not in data.columns:
+        data = calculate_macd(data)
+
+    # 标记蓝柱区间的开始和结束
+    data[&#39;Blue_Zone&#39;] = (data[&#39;Histogram&#39;] &gt; 0)
+
+    # 寻找蓝柱区间的起始点和结束点
+    blue_zones = []
+    in_blue_zone = False
+    for i in range(1, len(data)):
+        if data[&#39;Blue_Zone&#39;][i] and not in_blue_zone:
+            start = data.index[i]
+            in_blue_zone = True
+        elif not data[&#39;Blue_Zone&#39;][i] and in_blue_zone:
+            end = data.index[i - 1]
+            blue_zones.append((start, end))
+            in_blue_zone = False
+    # 处理最后一个区间（如果在蓝柱区间内结束）
+    if in_blue_zone:
+        blue_zones.append((start, data.index[-1]))
+
+    return blue_zones
+
+
+&#34;&#34;&#34;
+MACD蓝柱区间内J线第二次小于0
+遍历数据集，跟踪MACD蓝柱的开始和结束，同时记录每个蓝柱区间内J线值小于0的次数
+
+data：需要经过macd和kdj计算的dataframe
+return：蓝柱区间内J线第二次下跌至0以下的数据点
+&#34;&#34;&#34;
+
+
+def find_j_below_zero_during_macd_blue(data):
+    # 假设data已包含计算好的&#39;macd_histogram&#39;, &#39;K&#39;, &#39;D&#39;, &#39;J&#39;列
+    data[&#39;macd_blue&#39;] = data[&#39;Histogram&#39;] &gt; 0  # 标记MACD蓝柱区间
+    data[&#39;j_below_zero&#39;] = data[&#39;J&#39;] &lt; 0  # 标记J线小于0
+
+    # 初始化辅助列
+    data[&#39;blue_zone&#39;] = 0  # MACD蓝柱区间ID
+    data[&#39;j_below_zero_count&#39;] = 0  # 记录J线小于0的次数
+
+    blue_zone_id = 0
+    for i in range(1, len(data)):
+        if data.loc[data.index[i], &#39;macd_blue&#39;]:
+            if not data.loc[data.index[i - 1], &#39;macd_blue&#39;]:
+                blue_zone_id += 1  # 新的MACD蓝柱区间
+            data.loc[data.index[i], &#39;blue_zone&#39;] = blue_zone_id
+
+            if data.loc[data.index[i], &#39;j_below_zero&#39;]:
+                # 累计J线小于0的次数
+                data.loc[data.index[i], &#39;j_below_zero_count&#39;] = data.loc[data.index[i - 1], &#39;j_below_zero_count&#39;] + 1
+        else:
+            data.loc[data.index[i], &#39;j_below_zero_count&#39;] = 0  # 重置计数器
+    # 筛选出MACD蓝柱区间内J线第二次小于0的情况
+    second_j_below_zero_during_blue = data[(data[&#39;j_below_zero_count&#39;] == 2) &amp; (data[&#39;macd_blue&#39;])]
+
+    return second_j_below_zero_during_blue
+
+
+&#39;&#39;&#39;
+计算资金流出状态，正值开始变小或者负值开始变大
+data：包含以下内容的Dataframe
+    change_pct  涨跌幅(%)  
+    net_amount_main     主力净额(万) 主力净额 = 超大单净额 + 大单净额
+    net_pct_main        主力净占比(%)        主力净占比 = 主力净额 / 成交额
+    net_amount_xl       超大单净额(万)        超大单：大于等于50万股或者100万元的成交单
+    net_pct_xl  超大单净占比(%)       超大单净占比 = 超大单净额 / 成交额
+    net_amount_l        大单净额(万) 大单：大于等于10万股或者20万元且小于50万股或者100万元的成交单
+    net_pct_l   大单净占比(%)        大单净占比 = 大单净额 / 成交额
+    net_amount_m        中单净额(万) 中单：大于等于2万股或者4万元且小于10万股或者20万元的成交单
+    net_pct_m   中单净占比(%)        中单净占比 = 中单净额 / 成交额
+    net_amount_s        小单净额(万) 小单：小于2万股或者4万元的成交单
+    net_pct_s   小单净占比(%)        小单净占比 = 小单净额 / 成交额
+column：入参枚举类型为，分别对应不同类型资金&#39;net_amount_xl&#39;, &#39;net_amount_l&#39;, &#39;net_amount_m&#39;, &#39;net_amount_s&#39;
+    
+return 资金流向的正值开始变小或负值开始变大的Dataframe
+&#39;&#39;&#39;
+
+
+def analyze_money_flow_changes(data, column):
+    # 计算每种资金流向的变化
+    data[&#39;net_amount_xl_change&#39;] = data[&#39;net_amount_xl&#39;].diff()
+    data[&#39;net_amount_l_change&#39;] = data[&#39;net_amount_l&#39;].diff()
+    data[&#39;net_amount_m_change&#39;] = data[&#39;net_amount_m&#39;].diff()
+    data[&#39;net_amount_s_change&#39;] = data[&#39;net_amount_s&#39;].diff()
+
+    # 正值变小
+    positive_to_smaller = data[(data[column] &gt; 0) &amp; (data[f&#39;{column}_change&#39;] &lt; 0)]
+    # 负值变大
+    negative_to_larger = data[(data[column] &lt; 0) &amp; (data[f&#39;{column}_change&#39;] &gt; 0)]
+
+    return positive_to_smaller, negative_to_larger
+
+
+&#39;&#39;&#39;
+个股MACD蓝柱区600秒内
+调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+return 600秒内是否全是蓝柱的dataframe
+&#39;&#39;&#39;
+
+
+def find_macd_blue_zones_within_600_seconds(df):
+    &#34;&#34;&#34;
+    找到600秒内的MACD蓝柱区间。
+    &#34;&#34;&#34;
+    # df需要是每分钟的数据，600秒为最近10个数据点
+    window_size = 10
+
+    # 标记MACD蓝柱区间
+    df[&#39;macd_blue&#39;] = df[&#39;Histogram&#39;] &gt; 0
+
+    # 初始化一个列表来存储蓝柱区间
+    blue_zones_within_600 = []
+
+    for i in range(window_size - 1, len(df)):
+        # 检查最近600秒内是否全是蓝柱
+        if df.iloc[i - window_size + 1:i + 1][&#39;macd_blue&#39;].all():
+            blue_zones_within_600.append(df.index[i])
+
+    return blue_zones_within_600
+
+
+&#39;&#39;&#39;
+个股分时图往下破箱体
+df：包含分钟级价格数据的DataFrame，其中必须包含&#39;low&#39;列
+return 跌破箱体的时刻
+&#39;&#39;&#39;
+
+
+def find_break_box(df, window_size):
+    &#34;&#34;&#34;
+    分析股价是否跌破箱体底部。
+
+    :param df: 包含价格数据的DataFrame
+    :param window_size: 箱体计算的窗口大小，以分钟为单位
+    :return: 包含跌破箱体时刻的DataFrame
+    &#34;&#34;&#34;
+    # 计算每个窗口的最低价格作为箱体底部
+    df[&#39;rolling_min&#39;] = df[&#39;low&#39;].rolling(window=window_size, min_periods=1).min()
+
+    # 标记跌破箱体底部的时刻
+    df[&#39;break_box&#39;] = df[&#39;low&#39;] &lt; df[&#39;rolling_min&#39;].shift(1)  # 使用shift(1)以避免当前价格参与箱体底部的计算
+
+    # 返回跌破箱体的时刻
+    break_box_df = df[df[&#39;break_box&#39;]]
+
+    return break_box_df
+
+
+&#39;&#39;&#39;
+识别当前MACD蓝柱区低点低于前低的时刻。
+df：包含代表MACD柱状图值的&#39;Histogram&#39;列。
+&#39;&#39;&#39;
+
+
+def find_macd_blue_bar_lows(df):
+    df[&#39;macd_histogram_positive&#39;] = df[&#39;Histogram&#39;] &gt; 0
+    df[&#39;macd_low&#39;] = np.where(df[&#39;macd_histogram_positive&#39;], df[&#39;Histogram&#39;], np.nan)
+    df[&#39;rolling_macd_low&#39;] = df[&#39;macd_low&#39;].rolling(min_periods=1, window=len(df), center=False).min()
+    df[&#39;prev_rolling_macd_low&#39;] = df[&#39;rolling_macd_low&#39;].shift(1)
+    df[&#39;macd_blue_bar_new_low&#39;] = np.where(
+        (df[&#39;macd_histogram_positive&#39;]) &amp;
+        (df[&#39;Histogram&#39;] &lt; df[&#39;prev_rolling_macd_low&#39;]),
+        &#39;New Low&#39;, np.nan
+    )
+    return df[df[&#39;macd_blue_bar_new_low&#39;] == &#39;New Low&#39;]
+
+
+&#39;&#39;&#39;
+MACD隔堆顶背离
+股价新高，但MACD未创新高。
+df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+window=26代表通过比较当前价格是否高于过去26个交易日的最高价来判断是否创出新高
+&#39;&#39;&#39;
+
+
+def find_macd_divergence(df):
+    &#34;&#34;&#34;
+    寻找MACD隔堆顶背离：股价新高，但MACD未创新高。
+    &#34;&#34;&#34;
+    # 计算价格新高
+    df[&#39;price_new_high&#39;] = df[&#39;close&#39;] &gt; df[&#39;close&#39;].rolling(window=26, min_periods=1).max().shift(1)
+
+    # 计算MACD新高
+    df[&#39;macd_new_high&#39;] = df[&#39;MACD&#39;] &gt; df[&#39;MACD&#39;].rolling(window=26, min_periods=1).max().shift(1)
+
+    # 寻找背离：股价创新高，但MACD未创新高
+    df[&#39;divergence&#39;] = df[&#39;price_new_high&#39;] &amp; (~df[&#39;macd_new_high&#39;])
+
+    # 筛选出背离的记录
+    divergence_df = df[df[&#39;divergence&#39;]]
+
+    return divergence_df</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="calculate.analyze_money_flow_changes"><code class="name flex">
+<span>def <span class="ident">analyze_money_flow_changes</span></span>(<span>data, column)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze_money_flow_changes(data, column):
+    # 计算每种资金流向的变化
+    data[&#39;net_amount_xl_change&#39;] = data[&#39;net_amount_xl&#39;].diff()
+    data[&#39;net_amount_l_change&#39;] = data[&#39;net_amount_l&#39;].diff()
+    data[&#39;net_amount_m_change&#39;] = data[&#39;net_amount_m&#39;].diff()
+    data[&#39;net_amount_s_change&#39;] = data[&#39;net_amount_s&#39;].diff()
+
+    # 正值变小
+    positive_to_smaller = data[(data[column] &gt; 0) &amp; (data[f&#39;{column}_change&#39;] &lt; 0)]
+    # 负值变大
+    negative_to_larger = data[(data[column] &lt; 0) &amp; (data[f&#39;{column}_change&#39;] &gt; 0)]
+
+    return positive_to_smaller, negative_to_larger</code></pre>
+</details>
+</dd>
+<dt id="calculate.calculate_kdj"><code class="name flex">
+<span>def <span class="ident">calculate_kdj</span></span>(<span>data, period=9, k_smooth=3, d_smooth=3)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_kdj(data, period=9, k_smooth=3, d_smooth=3):
+    # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
+    # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
+    # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
+    # print(f&#34;high:{data[&#39;high&#39;]} ; low:{data[&#39;low&#39;]} ; close:{data[&#39;close&#39;]}&#34;)
+
+    # 计算RSV（未成熟随机值）
+    low_min = data[&#39;low&#39;].rolling(window=period).min()
+    high_max = data[&#39;high&#39;].rolling(window=period).max()
+    # data[&#39;RSV&#39;] = (data[&#39;close&#39;] - low_min) / (high_max - low_min) * 100
+
+    # 初始化K、D列
+    prev_k = 50  # 初始值可以根据实际情况调整
+    prev_d = 50  # 初始值可以根据实际情况调整
+
+    # 计算K、D指标
+    for i in range(1, len(data)):
+        current_rsv = (data.loc[data.index[i], &#39;close&#39;] - low_min.loc[data.index[i]]) / (
+                high_max.loc[data.index[i]] - low_min.loc[data.index[i]]) * 100 if not np.isnan(
+            low_min.loc[data.index[i]]) else np.nan
+        if not np.isnan(current_rsv):  # 如果RSV不是NaN，进行K和D的计算
+            current_k = (prev_k * (k_smooth - 1) + current_rsv) / k_smooth
+            current_d = (prev_d * (d_smooth - 1) + current_k) / d_smooth
+        else:
+            current_k = prev_k
+            current_d = prev_d
+
+            # 更新DataFrame和前一日的值
+        data.loc[data.index[i], &#39;K&#39;] = current_k
+        data.loc[data.index[i], &#39;D&#39;] = current_d
+        data.loc[data.index[i], &#39;J&#39;] = 3 * current_k - 2 * current_d
+
+        prev_k = current_k
+        prev_d = current_d
+
+    return data</code></pre>
+</details>
+</dd>
+<dt id="calculate.calculate_kdj_below_zero"><code class="name flex">
+<span>def <span class="ident">calculate_kdj_below_zero</span></span>(<span>data, period=9, k_smooth=3, d_smooth=3)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_kdj_below_zero(data, period=9, k_smooth=3, d_smooth=3):
+    # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
+    # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
+    # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
+    # print(f&#34;high:{data[&#39;high&#39;]} ; low:{data[&#39;low&#39;]} ; close:{data[&#39;close&#39;]}&#34;)
+
+    # 计算RSV（未成熟随机值）
+    low_min = data[&#39;low&#39;].rolling(window=period).min()
+    high_max = data[&#39;high&#39;].rolling(window=period).max()
+    # data[&#39;RSV&#39;] = (data[&#39;close&#39;] - low_min) / (high_max - low_min) * 100
+
+    # 初始化K、D列
+    prev_k = 50  # 初始值可以根据实际情况调整
+    prev_d = 50  # 初始值可以根据实际情况调整
+
+    # 计算K、D指标
+    for i in range(1, len(data)):
+        current_rsv = (data.loc[data.index[i], &#39;close&#39;] - low_min.loc[data.index[i]]) / (
+                high_max.loc[data.index[i]] - low_min.loc[data.index[i]]) * 100 if not np.isnan(
+            low_min.loc[data.index[i]]) else np.nan
+        if not np.isnan(current_rsv):  # 如果RSV不是NaN，进行K和D的计算
+            current_k = (prev_k * (k_smooth - 1) + current_rsv) / k_smooth
+            current_d = (prev_d * (d_smooth - 1) + current_k) / d_smooth
+        else:
+            current_k = prev_k
+            current_d = prev_d
+
+            # 更新DataFrame和前一日的值
+        data.loc[data.index[i], &#39;K&#39;] = current_k
+        data.loc[data.index[i], &#39;D&#39;] = current_d
+        data.loc[data.index[i], &#39;J&#39;] = 3 * current_k - 2 * current_d
+
+        prev_k = current_k
+        prev_d = current_d
+
+    # 计算J
+    kdj_below_zero = data[data[&#39;J&#39;] &lt; 0]
+
+    return kdj_below_zero</code></pre>
+</details>
+</dd>
+<dt id="calculate.calculate_macd"><code class="name flex">
+<span>def <span class="ident">calculate_macd</span></span>(<span>data, short_window=12, long_window=26, signal_window=9)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>计算MACD指标，包括MACD线、信号线和柱状图。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
+    &#34;&#34;&#34;
+    计算MACD指标，包括MACD线、信号线和柱状图。
+    &#34;&#34;&#34;
+    # 计算短期和长期的指数移动平均
+    short_ema = data[&#39;close&#39;].ewm(span=short_window, adjust=False).mean()
+    long_ema = data[&#39;close&#39;].ewm(span=long_window, adjust=False).mean()
+
+    # 计算MACD线和信号线
+    data[&#39;MACD&#39;] = short_ema - long_ema
+    data[&#39;Signal_Line&#39;] = data[&#39;MACD&#39;].ewm(span=signal_window, adjust=False).mean()
+
+    # 计算MACD柱状图
+    data[&#39;Histogram&#39;] = data[&#39;MACD&#39;] - data[&#39;Signal_Line&#39;]
+
+    return data</code></pre>
+</details>
+</dd>
+<dt id="calculate.find_break_box"><code class="name flex">
+<span>def <span class="ident">find_break_box</span></span>(<span>df, window_size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>分析股价是否跌破箱体底部。</p>
+<p>:param df: 包含价格数据的DataFrame
+:param window_size: 箱体计算的窗口大小，以分钟为单位
+:return: 包含跌破箱体时刻的DataFrame</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_break_box(df, window_size):
+    &#34;&#34;&#34;
+    分析股价是否跌破箱体底部。
+
+    :param df: 包含价格数据的DataFrame
+    :param window_size: 箱体计算的窗口大小，以分钟为单位
+    :return: 包含跌破箱体时刻的DataFrame
+    &#34;&#34;&#34;
+    # 计算每个窗口的最低价格作为箱体底部
+    df[&#39;rolling_min&#39;] = df[&#39;low&#39;].rolling(window=window_size, min_periods=1).min()
+
+    # 标记跌破箱体底部的时刻
+    df[&#39;break_box&#39;] = df[&#39;low&#39;] &lt; df[&#39;rolling_min&#39;].shift(1)  # 使用shift(1)以避免当前价格参与箱体底部的计算
+
+    # 返回跌破箱体的时刻
+    break_box_df = df[df[&#39;break_box&#39;]]
+
+    return break_box_df</code></pre>
+</details>
+</dd>
+<dt id="calculate.find_j_below_zero_during_macd_blue"><code class="name flex">
+<span>def <span class="ident">find_j_below_zero_during_macd_blue</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_j_below_zero_during_macd_blue(data):
+    # 假设data已包含计算好的&#39;macd_histogram&#39;, &#39;K&#39;, &#39;D&#39;, &#39;J&#39;列
+    data[&#39;macd_blue&#39;] = data[&#39;Histogram&#39;] &gt; 0  # 标记MACD蓝柱区间
+    data[&#39;j_below_zero&#39;] = data[&#39;J&#39;] &lt; 0  # 标记J线小于0
+
+    # 初始化辅助列
+    data[&#39;blue_zone&#39;] = 0  # MACD蓝柱区间ID
+    data[&#39;j_below_zero_count&#39;] = 0  # 记录J线小于0的次数
+
+    blue_zone_id = 0
+    for i in range(1, len(data)):
+        if data.loc[data.index[i], &#39;macd_blue&#39;]:
+            if not data.loc[data.index[i - 1], &#39;macd_blue&#39;]:
+                blue_zone_id += 1  # 新的MACD蓝柱区间
+            data.loc[data.index[i], &#39;blue_zone&#39;] = blue_zone_id
+
+            if data.loc[data.index[i], &#39;j_below_zero&#39;]:
+                # 累计J线小于0的次数
+                data.loc[data.index[i], &#39;j_below_zero_count&#39;] = data.loc[data.index[i - 1], &#39;j_below_zero_count&#39;] + 1
+        else:
+            data.loc[data.index[i], &#39;j_below_zero_count&#39;] = 0  # 重置计数器
+    # 筛选出MACD蓝柱区间内J线第二次小于0的情况
+    second_j_below_zero_during_blue = data[(data[&#39;j_below_zero_count&#39;] == 2) &amp; (data[&#39;macd_blue&#39;])]
+
+    return second_j_below_zero_during_blue</code></pre>
+</details>
+</dd>
+<dt id="calculate.find_macd_blue_bar_lows"><code class="name flex">
+<span>def <span class="ident">find_macd_blue_bar_lows</span></span>(<span>df)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_macd_blue_bar_lows(df):
+    df[&#39;macd_histogram_positive&#39;] = df[&#39;Histogram&#39;] &gt; 0
+    df[&#39;macd_low&#39;] = np.where(df[&#39;macd_histogram_positive&#39;], df[&#39;Histogram&#39;], np.nan)
+    df[&#39;rolling_macd_low&#39;] = df[&#39;macd_low&#39;].rolling(min_periods=1, window=len(df), center=False).min()
+    df[&#39;prev_rolling_macd_low&#39;] = df[&#39;rolling_macd_low&#39;].shift(1)
+    df[&#39;macd_blue_bar_new_low&#39;] = np.where(
+        (df[&#39;macd_histogram_positive&#39;]) &amp;
+        (df[&#39;Histogram&#39;] &lt; df[&#39;prev_rolling_macd_low&#39;]),
+        &#39;New Low&#39;, np.nan
+    )
+    return df[df[&#39;macd_blue_bar_new_low&#39;] == &#39;New Low&#39;]</code></pre>
+</details>
+</dd>
+<dt id="calculate.find_macd_blue_zones_within_600_seconds"><code class="name flex">
+<span>def <span class="ident">find_macd_blue_zones_within_600_seconds</span></span>(<span>df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>找到600秒内的MACD蓝柱区间。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_macd_blue_zones_within_600_seconds(df):
+    &#34;&#34;&#34;
+    找到600秒内的MACD蓝柱区间。
+    &#34;&#34;&#34;
+    # df需要是每分钟的数据，600秒为最近10个数据点
+    window_size = 10
+
+    # 标记MACD蓝柱区间
+    df[&#39;macd_blue&#39;] = df[&#39;Histogram&#39;] &gt; 0
+
+    # 初始化一个列表来存储蓝柱区间
+    blue_zones_within_600 = []
+
+    for i in range(window_size - 1, len(df)):
+        # 检查最近600秒内是否全是蓝柱
+        if df.iloc[i - window_size + 1:i + 1][&#39;macd_blue&#39;].all():
+            blue_zones_within_600.append(df.index[i])
+
+    return blue_zones_within_600</code></pre>
+</details>
+</dd>
+<dt id="calculate.find_macd_divergence"><code class="name flex">
+<span>def <span class="ident">find_macd_divergence</span></span>(<span>df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>寻找MACD隔堆顶背离：股价新高，但MACD未创新高。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_macd_divergence(df):
+    &#34;&#34;&#34;
+    寻找MACD隔堆顶背离：股价新高，但MACD未创新高。
+    &#34;&#34;&#34;
+    # 计算价格新高
+    df[&#39;price_new_high&#39;] = df[&#39;close&#39;] &gt; df[&#39;close&#39;].rolling(window=26, min_periods=1).max().shift(1)
+
+    # 计算MACD新高
+    df[&#39;macd_new_high&#39;] = df[&#39;MACD&#39;] &gt; df[&#39;MACD&#39;].rolling(window=26, min_periods=1).max().shift(1)
+
+    # 寻找背离：股价创新高，但MACD未创新高
+    df[&#39;divergence&#39;] = df[&#39;price_new_high&#39;] &amp; (~df[&#39;macd_new_high&#39;])
+
+    # 筛选出背离的记录
+    divergence_df = df[df[&#39;divergence&#39;]]
+
+    return divergence_df</code></pre>
+</details>
+</dd>
+<dt id="calculate.identify_macd_blue_zones"><code class="name flex">
+<span>def <span class="ident">identify_macd_blue_zones</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>识别MACD蓝柱区间。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def identify_macd_blue_zones(data):
+    &#34;&#34;&#34;
+    识别MACD蓝柱区间。
+    &#34;&#34;&#34;
+    # 首先确保数据中已有MACD相关列，如果没有则先计算
+    if &#39;MACD&#39; not in data.columns or &#39;Signal_Line&#39; not in data.columns or &#39;Histogram&#39; not in data.columns:
+        data = calculate_macd(data)
+
+    # 标记蓝柱区间的开始和结束
+    data[&#39;Blue_Zone&#39;] = (data[&#39;Histogram&#39;] &gt; 0)
+
+    # 寻找蓝柱区间的起始点和结束点
+    blue_zones = []
+    in_blue_zone = False
+    for i in range(1, len(data)):
+        if data[&#39;Blue_Zone&#39;][i] and not in_blue_zone:
+            start = data.index[i]
+            in_blue_zone = True
+        elif not data[&#39;Blue_Zone&#39;][i] and in_blue_zone:
+            end = data.index[i - 1]
+            blue_zones.append((start, end))
+            in_blue_zone = False
+    # 处理最后一个区间（如果在蓝柱区间内结束）
+    if in_blue_zone:
+        blue_zones.append((start, data.index[-1]))
+
+    return blue_zones</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="calculate.analyze_money_flow_changes" href="#calculate.analyze_money_flow_changes">analyze_money_flow_changes</a></code></li>
+<li><code><a title="calculate.calculate_kdj" href="#calculate.calculate_kdj">calculate_kdj</a></code></li>
+<li><code><a title="calculate.calculate_kdj_below_zero" href="#calculate.calculate_kdj_below_zero">calculate_kdj_below_zero</a></code></li>
+<li><code><a title="calculate.calculate_macd" href="#calculate.calculate_macd">calculate_macd</a></code></li>
+<li><code><a title="calculate.find_break_box" href="#calculate.find_break_box">find_break_box</a></code></li>
+<li><code><a title="calculate.find_j_below_zero_during_macd_blue" href="#calculate.find_j_below_zero_during_macd_blue">find_j_below_zero_during_macd_blue</a></code></li>
+<li><code><a title="calculate.find_macd_blue_bar_lows" href="#calculate.find_macd_blue_bar_lows">find_macd_blue_bar_lows</a></code></li>
+<li><code><a title="calculate.find_macd_blue_zones_within_600_seconds" href="#calculate.find_macd_blue_zones_within_600_seconds">find_macd_blue_zones_within_600_seconds</a></code></li>
+<li><code><a title="calculate.find_macd_divergence" href="#calculate.find_macd_divergence">find_macd_divergence</a></code></li>
+<li><code><a title="calculate.identify_macd_blue_zones" href="#calculate.identify_macd_blue_zones">identify_macd_blue_zones</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
