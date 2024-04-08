@@ -31,18 +31,17 @@ import numpy as np
 import jqdatasdk as jqd
 import connectJoinQuant as conn
 
-&#34;&#34;&#34;
-计算KDJ指标
-
-data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
-period: 计算RSV的周期，默认为9。
-k_smooth: K值的平滑参数，默认为3。
-d_smooth: D值的平滑参数，默认为3。
-return 包含k,d,j指标的Dataframe
-&#34;&#34;&#34;
-
 
 def calculate_kdj(data, period=9, k_smooth=3, d_smooth=3):
+    &#34;&#34;&#34;
+    计算KDJ指标
+
+    data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    period: 计算RSV的周期，默认为9。
+    k_smooth: K值的平滑参数，默认为3。
+    d_smooth: D值的平滑参数，默认为3。
+    return 包含k,d,j指标的Dataframe
+    &#34;&#34;&#34;
     # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
     # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
     # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
@@ -80,19 +79,18 @@ def calculate_kdj(data, period=9, k_smooth=3, d_smooth=3):
     return data
 
 
-&#34;&#34;&#34;
-计算KDJ指标小于0。
-
-参数:
-data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
-period: 计算RSV的周期，默认为9。
-k_smooth: K值的平滑参数，默认为3。
-d_smooth: D值的平滑参数，默认为3。
-return kdj的j值&lt;0的dataframe
-&#34;&#34;&#34;
-
 
 def calculate_kdj_below_zero(data, period=9, k_smooth=3, d_smooth=3):
+    &#34;&#34;&#34;
+    计算KDJ指标小于0。
+
+    参数:
+    data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    period: 计算RSV的周期，默认为9。
+    k_smooth: K值的平滑参数，默认为3。
+    d_smooth: D值的平滑参数，默认为3。
+    return kdj的j值&lt;0的dataframe
+    &#34;&#34;&#34;
     # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
     # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
     # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
@@ -133,19 +131,15 @@ def calculate_kdj_below_zero(data, period=9, k_smooth=3, d_smooth=3):
     return kdj_below_zero
 
 
-&#34;&#34;&#34;
-计算macd指标
-data: 包含&#39;close&#39;列的DataFrame，代表股票的历史价格数据。
-short_window：快速EMA
-long_window：慢速EMA
-signal_window：信号线市场
-return 包含MACD线、信号线、MACD柱状图的Dataframe
-&#34;&#34;&#34;
-
 
 def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
     &#34;&#34;&#34;
-    计算MACD指标，包括MACD线、信号线和柱状图。
+    计算macd指标
+    data: 包含&#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    short_window：快速EMA
+    long_window：慢速EMA
+    signal_window：信号线市场
+    return 包含MACD线、信号线、MACD柱状图的Dataframe
     &#34;&#34;&#34;
     # 计算短期和长期的指数移动平均
     short_ema = data[&#39;close&#39;].ewm(span=short_window, adjust=False).mean()
@@ -161,17 +155,13 @@ def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
     return data
 
 
-&#34;&#34;&#34;
-识别MACD蓝柱区域
-调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
-data：包含MACD线、信号线、柱状图）列的DataFrame，代表股票的历史价格数据。
-return 包含每个蓝柱区间起始和结束索引的列表
-&#34;&#34;&#34;
-
 
 def identify_macd_blue_zones(data):
     &#34;&#34;&#34;
-    识别MACD蓝柱区间。
+    识别MACD蓝柱区域
+    调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+    data：包含MACD线、信号线、柱状图）列的DataFrame，代表股票的历史价格数据。
+    return 包含每个蓝柱区间起始和结束索引的列表
     &#34;&#34;&#34;
     # 首先确保数据中已有MACD相关列，如果没有则先计算
     if &#39;MACD&#39; not in data.columns or &#39;Signal_Line&#39; not in data.columns or &#39;Histogram&#39; not in data.columns:
@@ -198,16 +188,15 @@ def identify_macd_blue_zones(data):
     return blue_zones
 
 
-&#34;&#34;&#34;
-MACD蓝柱区间内J线第二次小于0
-遍历数据集，跟踪MACD蓝柱的开始和结束，同时记录每个蓝柱区间内J线值小于0的次数
-
-data：需要经过macd和kdj计算的dataframe
-return：蓝柱区间内J线第二次下跌至0以下的数据点
-&#34;&#34;&#34;
-
 
 def find_j_below_zero_during_macd_blue(data):
+    &#34;&#34;&#34;
+    MACD蓝柱区间内J线第二次小于0
+    遍历数据集，跟踪MACD蓝柱的开始和结束，同时记录每个蓝柱区间内J线值小于0的次数
+
+    data：需要经过macd和kdj计算的dataframe
+    return：蓝柱区间内J线第二次下跌至0以下的数据点
+    &#34;&#34;&#34;
     # 假设data已包含计算好的&#39;macd_histogram&#39;, &#39;K&#39;, &#39;D&#39;, &#39;J&#39;列
     data[&#39;macd_blue&#39;] = data[&#39;Histogram&#39;] &gt; 0  # 标记MACD蓝柱区间
     data[&#39;j_below_zero&#39;] = data[&#39;J&#39;] &lt; 0  # 标记J线小于0
@@ -234,27 +223,26 @@ def find_j_below_zero_during_macd_blue(data):
     return second_j_below_zero_during_blue
 
 
-&#39;&#39;&#39;
-计算资金流出状态，正值开始变小或者负值开始变大
-data：包含以下内容的Dataframe
-    change_pct  涨跌幅(%)  
-    net_amount_main     主力净额(万) 主力净额 = 超大单净额 + 大单净额
-    net_pct_main        主力净占比(%)        主力净占比 = 主力净额 / 成交额
-    net_amount_xl       超大单净额(万)        超大单：大于等于50万股或者100万元的成交单
-    net_pct_xl  超大单净占比(%)       超大单净占比 = 超大单净额 / 成交额
-    net_amount_l        大单净额(万) 大单：大于等于10万股或者20万元且小于50万股或者100万元的成交单
-    net_pct_l   大单净占比(%)        大单净占比 = 大单净额 / 成交额
-    net_amount_m        中单净额(万) 中单：大于等于2万股或者4万元且小于10万股或者20万元的成交单
-    net_pct_m   中单净占比(%)        中单净占比 = 中单净额 / 成交额
-    net_amount_s        小单净额(万) 小单：小于2万股或者4万元的成交单
-    net_pct_s   小单净占比(%)        小单净占比 = 小单净额 / 成交额
-column：入参枚举类型为，分别对应不同类型资金&#39;net_amount_xl&#39;, &#39;net_amount_l&#39;, &#39;net_amount_m&#39;, &#39;net_amount_s&#39;
-    
-return 资金流向的正值开始变小或负值开始变大的Dataframe
-&#39;&#39;&#39;
-
 
 def analyze_money_flow_changes(data, column):
+    &#34;&#34;&#34;
+    计算资金流出状态，正值开始变小或者负值开始变大
+    data：包含以下内容的Dataframe
+        change_pct      涨跌幅(%)
+        net_amount_main 主力净额(万) 主力净额 = 超大单净额 + 大单净额
+        net_pct_main    主力净占比(%)        主力净占比 = 主力净额 / 成交额
+        net_amount_xl   超大单净额(万)        超大单：大于等于50万股或者100万元的成交单
+        net_pct_xl      超大单净占比(%)       超大单净占比 = 超大单净额 / 成交额
+        net_amount_l    大单净额(万) 大单：大于等于10万股或者20万元且小于50万股或者100万元的成交单
+        net_pct_l       大单净占比(%)        大单净占比 = 大单净额 / 成交额
+        net_amount_m    中单净额(万) 中单：大于等于2万股或者4万元且小于10万股或者20万元的成交单
+        net_pct_m       中单净占比(%)        中单净占比 = 中单净额 / 成交额
+        net_amount_s    小单净额(万) 小单：小于2万股或者4万元的成交单
+        net_pct_s       小单净占比(%)        小单净占比 = 小单净额 / 成交额
+    column：入参枚举类型为，分别对应不同类型资金&#39;net_amount_xl&#39;, &#39;net_amount_l&#39;, &#39;net_amount_m&#39;, &#39;net_amount_s&#39;
+
+    return 资金流向的正值开始变小或负值开始变大的Dataframe
+    &#34;&#34;&#34;
     # 计算每种资金流向的变化
     data[&#39;net_amount_xl_change&#39;] = data[&#39;net_amount_xl&#39;].diff()
     data[&#39;net_amount_l_change&#39;] = data[&#39;net_amount_l&#39;].diff()
@@ -269,18 +257,15 @@ def analyze_money_flow_changes(data, column):
     return positive_to_smaller, negative_to_larger
 
 
-&#39;&#39;&#39;
-个股MACD蓝柱区600秒内
-调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
-df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
-return 600秒内是否全是蓝柱的dataframe
-&#39;&#39;&#39;
-
 
 def find_macd_blue_zones_within_600_seconds(df):
     &#34;&#34;&#34;
-    找到600秒内的MACD蓝柱区间。
+    个股MACD蓝柱区600秒内
+    调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+    df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+    return 600秒内是否全是蓝柱的dataframe
     &#34;&#34;&#34;
+
     # df需要是每分钟的数据，600秒为最近10个数据点
     window_size = 10
 
@@ -297,12 +282,6 @@ def find_macd_blue_zones_within_600_seconds(df):
 
     return blue_zones_within_600
 
-
-&#39;&#39;&#39;
-个股分时图往下破箱体
-df：包含分钟级价格数据的DataFrame，其中必须包含&#39;low&#39;列
-return 跌破箱体的时刻
-&#39;&#39;&#39;
 
 
 def find_break_box(df, window_size):
@@ -325,13 +304,12 @@ def find_break_box(df, window_size):
     return break_box_df
 
 
-&#39;&#39;&#39;
-识别当前MACD蓝柱区低点低于前低的时刻。
-df：包含代表MACD柱状图值的&#39;Histogram&#39;列。
-&#39;&#39;&#39;
-
 
 def find_macd_blue_bar_lows(df):
+    &#34;&#34;&#34;
+    识别当前MACD蓝柱区低点低于前低的时刻。
+    df：包含代表MACD柱状图值的&#39;Histogram&#39;列。
+    &#34;&#34;&#34;
     df[&#39;macd_histogram_positive&#39;] = df[&#39;Histogram&#39;] &gt; 0
     df[&#39;macd_low&#39;] = np.where(df[&#39;macd_histogram_positive&#39;], df[&#39;Histogram&#39;], np.nan)
     df[&#39;rolling_macd_low&#39;] = df[&#39;macd_low&#39;].rolling(min_periods=1, window=len(df), center=False).min()
@@ -344,17 +322,13 @@ def find_macd_blue_bar_lows(df):
     return df[df[&#39;macd_blue_bar_new_low&#39;] == &#39;New Low&#39;]
 
 
-&#39;&#39;&#39;
-MACD隔堆顶背离
-股价新高，但MACD未创新高。
-df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
-window=26代表通过比较当前价格是否高于过去26个交易日的最高价来判断是否创出新高
-&#39;&#39;&#39;
-
 
 def find_macd_divergence(df):
     &#34;&#34;&#34;
-    寻找MACD隔堆顶背离：股价新高，但MACD未创新高。
+    MACD隔堆顶背离
+    股价新高，但MACD未创新高。
+    df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+    window=26代表通过比较当前价格是否高于过去26个交易日的最高价来判断是否创出新高
     &#34;&#34;&#34;
     # 计算价格新高
     df[&#39;price_new_high&#39;] = df[&#39;close&#39;] &gt; df[&#39;close&#39;].rolling(window=26, min_periods=1).max().shift(1)
@@ -382,12 +356,60 @@ def find_macd_divergence(df):
 <span>def <span class="ident">analyze_money_flow_changes</span></span>(<span>data, column)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>计算资金流出状态，正值开始变小或者负值开始变大
+data：包含以下内容的Dataframe
+change_pct
+涨跌幅(%)
+net_amount_main 主力净额(万) 主力净额 = 超大单净额 + 大单净额
+net_pct_main
+主力净占比(%)
+主力净占比 = 主力净额 / 成交额
+net_amount_xl
+超大单净额(万)
+超大单：大于等于50万股或者100万元的成交单
+net_pct_xl
+超大单净占比(%)
+超大单净占比 = 超大单净额 / 成交额
+net_amount_l
+大单净额(万) 大单：大于等于10万股或者20万元且小于50万股或者100万元的成交单
+net_pct_l
+大单净占比(%)
+大单净占比 = 大单净额 / 成交额
+net_amount_m
+中单净额(万) 中单：大于等于2万股或者4万元且小于10万股或者20万元的成交单
+net_pct_m
+中单净占比(%)
+中单净占比 = 中单净额 / 成交额
+net_amount_s
+小单净额(万) 小单：小于2万股或者4万元的成交单
+net_pct_s
+小单净占比(%)
+小单净占比 = 小单净额 / 成交额
+column：入参枚举类型为，分别对应不同类型资金'net_amount_xl', 'net_amount_l', 'net_amount_m', 'net_amount_s'</p>
+<p>return 资金流向的正值开始变小或负值开始变大的Dataframe</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def analyze_money_flow_changes(data, column):
+    &#34;&#34;&#34;
+    计算资金流出状态，正值开始变小或者负值开始变大
+    data：包含以下内容的Dataframe
+        change_pct      涨跌幅(%)
+        net_amount_main 主力净额(万) 主力净额 = 超大单净额 + 大单净额
+        net_pct_main    主力净占比(%)        主力净占比 = 主力净额 / 成交额
+        net_amount_xl   超大单净额(万)        超大单：大于等于50万股或者100万元的成交单
+        net_pct_xl      超大单净占比(%)       超大单净占比 = 超大单净额 / 成交额
+        net_amount_l    大单净额(万) 大单：大于等于10万股或者20万元且小于50万股或者100万元的成交单
+        net_pct_l       大单净占比(%)        大单净占比 = 大单净额 / 成交额
+        net_amount_m    中单净额(万) 中单：大于等于2万股或者4万元且小于10万股或者20万元的成交单
+        net_pct_m       中单净占比(%)        中单净占比 = 中单净额 / 成交额
+        net_amount_s    小单净额(万) 小单：小于2万股或者4万元的成交单
+        net_pct_s       小单净占比(%)        小单净占比 = 小单净额 / 成交额
+    column：入参枚举类型为，分别对应不同类型资金&#39;net_amount_xl&#39;, &#39;net_amount_l&#39;, &#39;net_amount_m&#39;, &#39;net_amount_s&#39;
+
+    return 资金流向的正值开始变小或负值开始变大的Dataframe
+    &#34;&#34;&#34;
     # 计算每种资金流向的变化
     data[&#39;net_amount_xl_change&#39;] = data[&#39;net_amount_xl&#39;].diff()
     data[&#39;net_amount_l_change&#39;] = data[&#39;net_amount_l&#39;].diff()
@@ -406,12 +428,26 @@ def find_macd_divergence(df):
 <span>def <span class="ident">calculate_kdj</span></span>(<span>data, period=9, k_smooth=3, d_smooth=3)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>计算KDJ指标</p>
+<p>data: 包含'high', 'low', 'close'列的DataFrame，代表股票的历史价格数据。
+period: 计算RSV的周期，默认为9。
+k_smooth: K值的平滑参数，默认为3。
+d_smooth: D值的平滑参数，默认为3。
+return 包含k,d,j指标的Dataframe</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def calculate_kdj(data, period=9, k_smooth=3, d_smooth=3):
+    &#34;&#34;&#34;
+    计算KDJ指标
+
+    data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    period: 计算RSV的周期，默认为9。
+    k_smooth: K值的平滑参数，默认为3。
+    d_smooth: D值的平滑参数，默认为3。
+    return 包含k,d,j指标的Dataframe
+    &#34;&#34;&#34;
     # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
     # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
     # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
@@ -453,12 +489,28 @@ def find_macd_divergence(df):
 <span>def <span class="ident">calculate_kdj_below_zero</span></span>(<span>data, period=9, k_smooth=3, d_smooth=3)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>计算KDJ指标小于0。</p>
+<p>参数:
+data: 包含'high', 'low', 'close'列的DataFrame，代表股票的历史价格数据。
+period: 计算RSV的周期，默认为9。
+k_smooth: K值的平滑参数，默认为3。
+d_smooth: D值的平滑参数，默认为3。
+return kdj的j值&lt;0的dataframe</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def calculate_kdj_below_zero(data, period=9, k_smooth=3, d_smooth=3):
+    &#34;&#34;&#34;
+    计算KDJ指标小于0。
+
+    参数:
+    data: 包含&#39;high&#39;, &#39;low&#39;, &#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    period: 计算RSV的周期，默认为9。
+    k_smooth: K值的平滑参数，默认为3。
+    d_smooth: D值的平滑参数，默认为3。
+    return kdj的j值&lt;0的dataframe
+    &#34;&#34;&#34;
     # data[&#39;high&#39;] = data[&#39;high&#39;].astype(float)
     # data[&#39;low&#39;] = data[&#39;low&#39;].astype(float)
     # data[&#39;close&#39;] = data[&#39;close&#39;].astype(float)
@@ -503,14 +555,24 @@ def find_macd_divergence(df):
 <span>def <span class="ident">calculate_macd</span></span>(<span>data, short_window=12, long_window=26, signal_window=9)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>计算MACD指标，包括MACD线、信号线和柱状图。</p></div>
+<div class="desc"><p>计算macd指标
+data: 包含'close'列的DataFrame，代表股票的历史价格数据。
+short_window：快速EMA
+long_window：慢速EMA
+signal_window：信号线市场
+return 包含MACD线、信号线、MACD柱状图的Dataframe</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
     &#34;&#34;&#34;
-    计算MACD指标，包括MACD线、信号线和柱状图。
+    计算macd指标
+    data: 包含&#39;close&#39;列的DataFrame，代表股票的历史价格数据。
+    short_window：快速EMA
+    long_window：慢速EMA
+    signal_window：信号线市场
+    return 包含MACD线、信号线、MACD柱状图的Dataframe
     &#34;&#34;&#34;
     # 计算短期和长期的指数移动平均
     short_ema = data[&#39;close&#39;].ewm(span=short_window, adjust=False).mean()
@@ -562,12 +624,22 @@ def find_macd_divergence(df):
 <span>def <span class="ident">find_j_below_zero_during_macd_blue</span></span>(<span>data)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>MACD蓝柱区间内J线第二次小于0
+遍历数据集，跟踪MACD蓝柱的开始和结束，同时记录每个蓝柱区间内J线值小于0的次数</p>
+<p>data：需要经过macd和kdj计算的dataframe
+return：蓝柱区间内J线第二次下跌至0以下的数据点</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def find_j_below_zero_during_macd_blue(data):
+    &#34;&#34;&#34;
+    MACD蓝柱区间内J线第二次小于0
+    遍历数据集，跟踪MACD蓝柱的开始和结束，同时记录每个蓝柱区间内J线值小于0的次数
+
+    data：需要经过macd和kdj计算的dataframe
+    return：蓝柱区间内J线第二次下跌至0以下的数据点
+    &#34;&#34;&#34;
     # 假设data已包含计算好的&#39;macd_histogram&#39;, &#39;K&#39;, &#39;D&#39;, &#39;J&#39;列
     data[&#39;macd_blue&#39;] = data[&#39;Histogram&#39;] &gt; 0  # 标记MACD蓝柱区间
     data[&#39;j_below_zero&#39;] = data[&#39;J&#39;] &lt; 0  # 标记J线小于0
@@ -598,12 +670,17 @@ def find_macd_divergence(df):
 <span>def <span class="ident">find_macd_blue_bar_lows</span></span>(<span>df)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>识别当前MACD蓝柱区低点低于前低的时刻。
+df：包含代表MACD柱状图值的'Histogram'列。</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def find_macd_blue_bar_lows(df):
+    &#34;&#34;&#34;
+    识别当前MACD蓝柱区低点低于前低的时刻。
+    df：包含代表MACD柱状图值的&#39;Histogram&#39;列。
+    &#34;&#34;&#34;
     df[&#39;macd_histogram_positive&#39;] = df[&#39;Histogram&#39;] &gt; 0
     df[&#39;macd_low&#39;] = np.where(df[&#39;macd_histogram_positive&#39;], df[&#39;Histogram&#39;], np.nan)
     df[&#39;rolling_macd_low&#39;] = df[&#39;macd_low&#39;].rolling(min_periods=1, window=len(df), center=False).min()
@@ -620,15 +697,22 @@ def find_macd_divergence(df):
 <span>def <span class="ident">find_macd_blue_zones_within_600_seconds</span></span>(<span>df)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>找到600秒内的MACD蓝柱区间。</p></div>
+<div class="desc"><p>个股MACD蓝柱区600秒内
+调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+return 600秒内是否全是蓝柱的dataframe</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def find_macd_blue_zones_within_600_seconds(df):
     &#34;&#34;&#34;
-    找到600秒内的MACD蓝柱区间。
+    个股MACD蓝柱区600秒内
+    调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+    df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+    return 600秒内是否全是蓝柱的dataframe
     &#34;&#34;&#34;
+
     # df需要是每分钟的数据，600秒为最近10个数据点
     window_size = 10
 
@@ -650,14 +734,20 @@ def find_macd_divergence(df):
 <span>def <span class="ident">find_macd_divergence</span></span>(<span>df)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>寻找MACD隔堆顶背离：股价新高，但MACD未创新高。</p></div>
+<div class="desc"><p>MACD隔堆顶背离
+股价新高，但MACD未创新高。
+df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+window=26代表通过比较当前价格是否高于过去26个交易日的最高价来判断是否创出新高</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def find_macd_divergence(df):
     &#34;&#34;&#34;
-    寻找MACD隔堆顶背离：股价新高，但MACD未创新高。
+    MACD隔堆顶背离
+    股价新高，但MACD未创新高。
+    df：包含MACD相关的几个指标（MACD线、信号线、柱状图）的dataframe
+    window=26代表通过比较当前价格是否高于过去26个交易日的最高价来判断是否创出新高
     &#34;&#34;&#34;
     # 计算价格新高
     df[&#39;price_new_high&#39;] = df[&#39;close&#39;] &gt; df[&#39;close&#39;].rolling(window=26, min_periods=1).max().shift(1)
@@ -678,14 +768,20 @@ def find_macd_divergence(df):
 <span>def <span class="ident">identify_macd_blue_zones</span></span>(<span>data)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>识别MACD蓝柱区间。</p></div>
+<div class="desc"><p>识别MACD蓝柱区域
+调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+data：包含MACD线、信号线、柱状图）列的DataFrame，代表股票的历史价格数据。
+return 包含每个蓝柱区间起始和结束索引的列表</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def identify_macd_blue_zones(data):
     &#34;&#34;&#34;
-    识别MACD蓝柱区间。
+    识别MACD蓝柱区域
+    调用此方法前需要先计算MACD相关的几个指标（MACD线、信号线、柱状图）
+    data：包含MACD线、信号线、柱状图）列的DataFrame，代表股票的历史价格数据。
+    return 包含每个蓝柱区间起始和结束索引的列表
     &#34;&#34;&#34;
     # 首先确保数据中已有MACD相关列，如果没有则先计算
     if &#39;MACD&#39; not in data.columns or &#39;Signal_Line&#39; not in data.columns or &#39;Histogram&#39; not in data.columns:
